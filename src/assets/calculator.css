@@ -1,0 +1,51 @@
+#calculatorContainer {
+    display: grid;
+    justify-content: center;
+    gap: 4px;
+    grid-template-areas:
+            "input input input op"
+            "nr nr nr op"
+            "nr nr nr op"
+            "nr nr nr op"
+            "nr nr nr op";
+
+    grid-template-columns: 100px 100px 100px 100px;
+    grid-template-rows: 100px 100px 100px 100px 100px;
+    font-size: 30px;
+    align-content: center;
+    margin: 10px;
+
+}
+
+.btn {
+    display: flex;
+    border: black 1px solid;
+    padding: 20px;
+    justify-content: center;
+    Background-color: darkseagreen;
+    color: darkolivegreen;
+}
+
+#input {
+    grid-area: input;
+    border: black 2px solid;
+}
+
+#equals, #plus, #minus, #times, #divide, #clear, #point {
+    border: black 1px solid;
+    padding: 20px;
+    background-color: dimgray;
+    color: gainsboro;
+}
+
+#point {
+    padding: 5px;
+    font-size: 40px;
+
+}
+
+#output {
+    border: black 2px solid;
+    margin: 10px;
+
+}
