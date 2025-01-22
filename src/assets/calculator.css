@@ -17,7 +17,7 @@
 
 }
 
-.btn {
+button {
     display: flex;
     border: black 1px solid;
     padding: 20px;
@@ -31,7 +31,7 @@
     border: black 2px solid;
 }
 
-#equals, #plus, #minus, #times, #divide, #clear, #point {
+.option{
     border: black 1px solid;
     padding: 20px;
     background-color: dimgray;
