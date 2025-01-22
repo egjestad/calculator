@@ -1,7 +1,4 @@
 <script setup>
-
-import {CalculatorView} from '/src/views/calculatorView.vue'
-
 </script>
 
 <template>
@@ -15,7 +12,6 @@ import {CalculatorView} from '/src/views/calculatorView.vue'
     <div id="calculator">
       <CalculatorView />
     </div>
-
 
   </div>
 </template>
