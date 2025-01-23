@@ -26,14 +26,12 @@
     <button class="option" id="times" @click="handleOperatorClick('*')">x</button>
     <button class="option" id="point" @click="handleClick('.')">.</button>
     <button class="number" id="0" @click="handleNumberClick('0')">0</button>
-    <button class="option" id="divide" @click="handleOperatorClick('/')">/</button>
     <button class="option" id="equals" @click="handleClick('=')">=</button>
+    <button class="option" id="divide" @click="handleOperatorClick('/')">/</button>
+
   </div>
 
-  <div id="output">
-    <h1 id="outputHeader">Result</h1>
-    <p id="result"></p>
-  </div>
+
 
   </div>
 </template>
@@ -82,7 +80,11 @@ data() {
       this.calculated = false;
     },
     calculate() {
+
       this.displayValue = eval(this.displayValue.replace(/(^|[^0-9])0+(\d+)/g, '$1$2'));
+      if (this.displayValue % 1 !== 0) {
+      this.displayValue = this.displayValue.toFixed(9).replace(/\.?0+$/, '');
+      }
       this.calculated = true;
     }
 
