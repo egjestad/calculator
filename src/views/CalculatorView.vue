@@ -5,28 +5,29 @@
   <div id="calculatorContainer">
 
       <input id="input"
+             type="text"
               v-model="displayValue"
               placeholder="0"
               readonly
       >
 
-    <button class="option" id="equals" @click="handleClick('=')">=</button>
-    <button class="number" id="1" @click="handleClick('1')">1</button>
-    <button class="number" id="2" @click="handleClick('2')">2</button>
-    <button class="number" id="3" @click="handleClick('3')">3</button>
-    <button class="option" id="plus" @click="handleClick('+')">+</button>
-    <button class="number" id="4" @click="handleClick('4')">4</button>
-    <button class="number" id="5" @click="handleClick('5')">5</button>
-    <button class="number" id="6" @click="handleClick('6')">6</button>
-    <button class="option" id="minus" @click="handleClick('-')">-</button>
-    <button class="number" id="7" @click="handleClick('7')">7</button>
-    <button class="number" id="8" @click="handleClick('8')">8</button>
-    <button class="number" id="9" @click="handleClick('9')">9</button>
-    <button class="option" id="times" @click="handleClick('x')">x</button>
+    <button class="option" id="clear" @click="handleClear()">C</button>
+    <button class="number" id="1" @click="handleNumberClick('1')">1</button>
+    <button class="number" id="2" @click="handleNumberClick('2')">2</button>
+    <button class="number" id="3" @click="handleNumberClick('3')">3</button>
+    <button class="option" id="plus" @click="handleOperatorClick('+')">+</button>
+    <button class="number" id="4" @click="handleNumberClick('4')">4</button>
+    <button class="number" id="5" @click="handleNumberClick('5')">5</button>
+    <button class="number" id="6" @click="handleNumberClick('6')">6</button>
+    <button class="option" id="minus" @click="handleOperatorClick('-')">-</button>
+    <button class="number" id="7" @click="handleNumberClick('7')">7</button>
+    <button class="number" id="8" @click="handleNumberClick('8')">8</button>
+    <button class="number" id="9" @click="handleNumberClick('9')">9</button>
+    <button class="option" id="times" @click="handleOperatorClick('*')">x</button>
     <button class="option" id="point" @click="handleClick('.')">.</button>
-    <button class="number" id="0" @click="handleClick('0')">0</button>
-    <button class="option" id="divide" @click="handleClick('/')">/</button>
-    <button class="option" id="clear" @click="handleClick('c')">C</button>
+    <button class="number" id="0" @click="handleNumberClick('0')">0</button>
+    <button class="option" id="divide" @click="handleOperatorClick('/')">/</button>
+    <button class="option" id="equals" @click="handleClick('=')">=</button>
   </div>
 
   <div id="output">
@@ -49,26 +50,47 @@ data() {
 },
   methods: {
     handleClick(value) {
-      if (value === "=") {
+      if (value === '=') {
         this.calculated = true;
-      } else if (value === "c") {
-        this.displayValue = "";
-        this.result = "";
-        this.calculated = false;
+        this.calculate();
       } else {
-        if (this.calculated) {
-          this.displayValue = "";
-          this.calculated = false;
-        }
         this.displayValue += value;
       }
     },
-    calculateResult() {
+    handleNumberClick(value) {
+      if (this.calculated) {
+        this.handleClear();
+        this.calculated = false;
+      }
+      this.displayValue += value;
+    },
+    handleOperatorClick(operator) {
+      if (this.displayValue === "") {
+        return;
+      }
+      if (/[/+*-]$/.test(this.displayValue)) {
+        this.displayValue = this.displayValue.slice(0, -1);
+      }
+      this.calculated = false;
+      this.displayValue += operator;
+
+
+    },
+    handleClear() {
+      this.displayValue = "";
+      this.result = "";
+      this.calculated = false;
+    },
+    calculate() {
+      this.displayValue = eval(this.displayValue.replace(/(^|[^0-9])0+(\d+)/g, '$1$2'));
+      this.calculated = true;
+    }
+
 
     }
 
   }
-}
+
 </script>
 
 
