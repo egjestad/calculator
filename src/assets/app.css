@@ -1,11 +1,12 @@
 header {
     display: flex;
     justify-content: center;
-    margin: 30px 0;
     line-height: 1.5;
     max-height: 100vh;
     font-family: Copperplate, times, serif;
     font-size: 50px;
+    grid-area: header;
+border: black 2px solid;
 }
 
 .logo {

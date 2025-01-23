@@ -1,5 +1,7 @@
 @import './base.css';
 @import 'app.css';
+@import 'calculator.css';
+
 
 
 #app {
@@ -7,19 +9,26 @@
   margin: 0 auto;
   padding: 2rem;
   font-weight: normal;
+  display: grid;
+  grid-template-areas: "header"
+                        "calculatorView";
+  gap: 20px;
 }
 
 
+
 a,
-.green {
+.green,
+button {
   text-decoration: none;
   color: hsla(160, 100%, 37%, 1);
   transition: 0.4s;
   padding: 3px;
 }
 
+
 @media (hover: hover) {
-  a:hover {
+  button:hover {
     background-color: hsla(160, 100%, 37%, 0.2);
   }
 }
@@ -31,8 +40,6 @@ a,
   }
 
   #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
     padding: 0 2rem;
   }
 }
