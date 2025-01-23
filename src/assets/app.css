@@ -6,7 +6,15 @@ header {
     font-family: Copperplate, times, serif;
     font-size: 50px;
     grid-area: header;
-border: black 2px solid;
+
+}
+
+#logContainer{
+    grid-area: log;
+    display: grid;
+    gap: 4px;
+    align-content: center;
+    margin: 10px;
 }
 
 .logo {
