@@ -7,6 +7,7 @@
 
 }
 
+
 #calculatorContainer {
     grid-area: calculator;
     display: grid;
@@ -25,11 +26,12 @@
     margin: 10px;
 
 
+
 }
 
 button {
     display: flex;
-    border: black 1px solid;
+    border: black 2px solid;
     padding: 20px;
     justify-content: center;
     Background-color: darkseagreen;
@@ -53,7 +55,6 @@ button {
 }
 
 .option{
-    border: black 1px solid;
     padding: 20px;
     background-color: dimgray;
     color: gainsboro;
