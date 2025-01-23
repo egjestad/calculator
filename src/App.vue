@@ -1,8 +1,9 @@
 <script setup>
+import Log from '@/views/Log.vue'
 </script>
 
 <template>
-  <div id="app">
+
   <header>
 
     <div class="wrapper">
@@ -12,8 +13,11 @@
     <div id="calculator">
       <CalculatorView />
     </div>
+    <div id="log">
+      <Log />
+    </div>
 
-  </div>
+
 </template>
 
 <style>
