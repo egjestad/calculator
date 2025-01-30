@@ -1,15 +1,12 @@
 #calculator {
     grid-area: calculatorView;
-    display: grid;
-    grid-template-areas:
-            "calculator output";
-    grid-template-columns: auto auto;
 
+    height: 100%;
 }
 
 
 #calculatorContainer {
-    grid-area: calculator;
+
     display: grid;
     justify-content: center;
     gap: 4px;
@@ -23,18 +20,19 @@
     grid-template-columns: 100px 100px 100px 100px;
     grid-template-rows: 100px 100px 100px 100px 100px;
     align-content: center;
-    margin: 10px;
 
-
+    max-height: 600px;
+    max-width: 600px;
+    height: 100%;
 
 }
 
 button {
     display: flex;
-    border: black 2px solid;
+    border: #313a28 2px solid;
     padding: 20px;
     justify-content: center;
-    Background-color: darkseagreen;
+    Background-color: #829B6DFF;
     align-items: center;
     font-size: 200%;
     font-family: Copperplate, times, serif;
@@ -47,11 +45,12 @@ button {
 
 #input {
     grid-area: input;
-    border: black 2px solid;
+    border: #313a28 2px solid;
     text-align: right;
     font-size: 200%;
     font-family: Copperplate, times, serif;
     padding: 10px;
+    color: #313a28;
 }
 
 .option{

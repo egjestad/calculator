@@ -1,5 +1,5 @@
 <script setup>
-import Log from '@/views/Log.vue'
+import Log from '@/views/LogComponent.vue'
 </script>
 
 <template>
@@ -10,12 +10,10 @@ import Log from '@/views/Log.vue'
       Calculator
     </div>
   </header>
-    <div id="calculator">
+
       <CalculatorView />
-    </div>
-    <div id="log">
-      <Log />
-    </div>
+
+
 
 
 </template>
